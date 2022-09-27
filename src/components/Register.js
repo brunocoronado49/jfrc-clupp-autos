@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button';
-import { useAuthHook } from '../hooks/useAuthHook'
+import { useSignUpHook } from '../hooks/useAuthHook'
 import Alert from './Alert'
 
 const Register = () => {
-  const { error, onChange, onSubmit } = useAuthHook()
+  const { error, onChange, onSubmit } = useSignUpHook()
 
   return (
     <div>
