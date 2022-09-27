@@ -1,9 +1,14 @@
-const Alert = ({ message }) => {
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+
+const AlertPupUp = ({ message }) => {
   return (
     <div>
-      <span>{message}</span>
+      <Stack sx={{ width: '100%' }} spacing={2}>
+        <Alert severity="warning">{message}</Alert>
+      </Stack>
     </div>
   )
 }
 
-export default Alert
+export default AlertPupUp

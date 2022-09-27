@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom'
 import TextField from '@mui/material/TextField'
-import Button from '@mui/material/Button';
 import { useLoginHook } from '../hooks/useAuthHook'
-import Alert from './Alert'
+import AlertPupUp from './Alert'
+import '../styles/auth-style.css'
 
 const Login = () => {
   const { error, onChange, onSubmit, onResetPassword } = useLoginHook()
 
   return (
     <div>
-      {error && <Alert message={error} />}
+      {error && <AlertPupUp message={error} />}
+      <p className="title-auth">Iniciar Sesión</p>
       <form onSubmit={onSubmit}>
         <TextField
           id="email"
@@ -28,11 +29,11 @@ const Login = () => {
           onChange={onChange}
         />
         <a href="#!" onClick={onResetPassword}>Olvidaste la contraseña?</a>
-        <Button variant="contained" type='submit'>Inicia sesión</Button>
+        <button className="btn-auth" type="submit">Iniciar Sesión</button>
         <p>
           No tienes una cuenta?
           <Link to="/register">
-            Registro
+            Crear Cuenta
           </Link>
         </p>
       </form>

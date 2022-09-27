@@ -71,3 +71,22 @@ export const useLoginHook = () => {
   
   return { error, onChange, onSubmit, onResetPassword }
 }
+
+/// Logica para cerrar sesión
+export const useLogoutHook = () => {
+  const { logout, user } = useAuth()
+  const navigate = useNavigate()
+
+  const onLogoutSubmit = async event => {
+    event.preventDefault()
+
+    try {
+      await logout()
+      navigate("/login")
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
+  return {onLogoutSubmit, user}
+}
