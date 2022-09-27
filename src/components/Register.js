@@ -9,7 +9,7 @@ const Register = () => {
 
   return (
     <div className="form-div">
-      {error && <AlertPupUp message={error} />}
+      {error && <div className="alert"><AlertPupUp message={error} /></div>}
       <center>
         <form onSubmit={onSubmit} className="form-auth">
           <p className="title-auth">Crear Cuenta</p>
