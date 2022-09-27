@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/authContext'
-import Login from './components/auth/Login'
-import Register from './components/auth/Register'
-import Feed from './components/home/feed/Feed'
-import Create from './components/home/create/Create'
+import Login from './components/Login'
+import Register from './components/Register'
+import Feed from './components/Feed'
+import Create from './components/Create'
 
 function App() {
   return (
