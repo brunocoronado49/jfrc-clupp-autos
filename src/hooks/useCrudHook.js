@@ -7,6 +7,7 @@ export const useCreateHook = () => {
   // const navigate = useNavigate()
   const [vehicle, setVehicle] = useState(Car)
   const [image, setImage] = useState(null)
+  const [imgUrl, setImgUrl] = useState("")
   const [error, setError] = useState("")
 
   const onChange = (event) => {
@@ -14,8 +15,10 @@ export const useCreateHook = () => {
     setVehicle({ ...vehicle, [name]: value })
   }
 
-  const onChangeImage = (e) => {
-    setImage(e.target.files[0])
+  const onChangeImage = (event) => {
+    const urlImage = URL.createObjectURL(event.target.files[0])
+    setImgUrl(urlImage)
+    setImage(event.target.files[0])
   }
 
   const onSubmit = async (event) => {
@@ -23,16 +26,17 @@ export const useCreateHook = () => {
     
     try {
       await create(vehicle)
-      const result = await uploadImage(image)
+      const result = await uploadImage(image, vehicle)
       console.log(result)
       setError("Vehículo añadido")
       // navigate("/")
     } catch (error) {
       setError(error.message)
+      console.log(error)
     }
   }
 
-  return { image, error, onChange, onChangeImage, onSubmit }
+  return { imgUrl, error, onChange, onChangeImage, onSubmit }
 }
 
 export const useDeleteHook = () => {}
