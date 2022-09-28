@@ -8,7 +8,7 @@ import AlertPupUp from './Alert'
 import '../styles/styles.css'
 
 const Create = () => {
-  const { error, onChange, onSubmit } = useCreateHook()
+  const { image, error, onChange, onChangeImage, onSubmit } = useCreateHook()
 
   return (
     <div>
@@ -19,7 +19,8 @@ const Create = () => {
           <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             <Grid item xs={6}>
               <div class="add-image-div">
-                <img src={NoPhoto} alt="add" onClick={() => alert("Holiiiiis")} className="add-image" />
+                <input type="file" onChange={onChangeImage} />
+                <img src={!image ? NoPhoto : image} alt="add" className="add-image" />
               </div>
             </Grid>
             <Grid item xs={6}>
