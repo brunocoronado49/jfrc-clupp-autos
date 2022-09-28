@@ -18,7 +18,8 @@ export const useCreateHook = () => {
     
     try {
       await create(vehicle)
-      navigate("/")
+      setError("Vehículo añadido")
+      // navigate("/")
     } catch (error) {
       setError(error.message)
     }

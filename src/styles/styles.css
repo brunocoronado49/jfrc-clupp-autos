@@ -7,3 +7,44 @@
   color: black;
   text-align: center;
 }
+
+.add-image-div {
+  margin-left: 100px;
+  margin-right: 100px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.add-image {
+  width: 500px;
+}
+
+.input {
+  width: 400px;
+}
+
+.input-bottom {
+  width: 400px;
+  padding-top: 45px;
+}
+
+.btn-add-div {
+  padding-left: 240px;
+}
+
+.btn-add {
+  color: #ffffff;
+  border: none;
+  background-color: #00a8ff;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 20px;
+  border-radius: 6px;
+}
+
+.to-feed {
+  padding-top: 100px;
+  text-align: center;
+}

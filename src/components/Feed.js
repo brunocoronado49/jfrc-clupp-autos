@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLogoutHook } from '../hooks/useAuthHook'
 
 const Feed = () => {
@@ -5,6 +6,9 @@ const Feed = () => {
 
   return (
     <div>
+      <Link to="/create" className="link">
+        Añadir un vehículo
+      </Link>
       {
         <p>{user.email}</p>
       }
