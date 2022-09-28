@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import { create, uploadImage } from '../api/crud'
-import { useNavigate } from 'react-router-dom'
 import { Car } from '../models/Car'
 
 export const useCreateHook = () => {
-  // const navigate = useNavigate()
   const [vehicle, setVehicle] = useState(Car)
   const [image, setImage] = useState(null)
   const [imgUrl, setImgUrl] = useState("")
@@ -29,7 +27,6 @@ export const useCreateHook = () => {
       const result = await uploadImage(image, vehicle)
       console.log(result)
       setError("Vehículo añadido")
-      // navigate("/")
     } catch (error) {
       setError(error.message)
       console.log(error)
