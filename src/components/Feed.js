@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLogoutHook } from '../hooks/useAuthHook'
 
 const Feed = () => {
   const { onLogoutSubmit, user } = useLogoutHook()
+  const [items, setItems] = useState([])
 
   return (
     <div>
